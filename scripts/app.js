@@ -67,9 +67,12 @@ let db = firebase.firestore()
 //    console.log(err)
 // })
 
+//Inserindo com ID personalizado
+//ATENÇÃO: Se já houver algo com esse ID, ele será sobrescrito
+//Ou seja, essa função também server para atualização
 db.collection(TURMA).doc("AlunoNovo").set({
    nome: "Mariana",
-   sobrenome: "Santos",
+   sobrenome: "Oliveira",
    notas: {
       nota1: 8.6,
       nota2: 7.5
