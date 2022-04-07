@@ -39,10 +39,12 @@ let db = firebase.firestore()
 //    console.log(aluno.nome)
 // })
 
-db.collection("turmaA").where("nome", "==", "Marlon").get()
+db.collection("turmaA").where("nome", ">" , "Igor").get()
 .then(snapshot =>{
    snapshot.forEach((doc) => {
             let aluno = doc.data()
             console.log(aluno.nome, aluno.sobrenome)
          })
 })
+
+//Comparações permitidas == , > , < , >= , <=
