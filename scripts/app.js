@@ -38,3 +38,11 @@ let db = firebase.firestore()
 //    let aluno = doc.data()
 //    console.log(aluno.nome)
 // })
+
+db.collection("turmaA").where("nome", "==", "Marlon").get()
+.then(snapshot =>{
+   snapshot.forEach((doc) => {
+            let aluno = doc.data()
+            console.log(aluno.nome, aluno.sobrenome)
+         })
+})
