@@ -48,3 +48,4 @@ db.collection("turmaA").where("nome", ">" , "Igor").get()
 })
 
 //Comparações permitidas == , > , < , >= , <=
+//Tomar cuidado ao tentar comparar string com número, vai dar ruim
