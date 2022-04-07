@@ -33,19 +33,34 @@ let db = firebase.firestore()
 
 
 //Ler dados específicos
-// let docRef = db.collection("turmaA").doc("VgC3wqtDleXyZuxNe2AV")
+// let docRef = db.collection("turmaA").doc("gYMoJLLhwBigk0JhyK0z")
 // docRef.get().then((doc)=>{
 //    let aluno = doc.data()
 //    console.log(aluno.nome)
 // })
 
-db.collection("turmaA").where("nome", ">" , "Igor").get()
-.then(snapshot =>{
-   snapshot.forEach((doc) => {
-            let aluno = doc.data()
-            console.log(aluno.nome, aluno.sobrenome)
-         })
-})
+// db.collection("turmaA").where("nome", ">" , "Igor").get()
+// .then(snapshot =>{
+//    snapshot.forEach((doc) => {
+//             let aluno = doc.data()
+//             console.log(aluno.nome, aluno.sobrenome)
+//          })
+// })
 
 //Comparações permitidas == , > , < , >= , <=
 //Tomar cuidado ao tentar comparar string com número, vai dar ruim
+
+const TURMA = "turmaA"
+
+db.collection(TURMA).add({
+   nome: "Marcos",
+   sobrenome: "Santos",
+   notas: {
+      nota1: 9.6,
+      nota2: 7.5
+   }
+}).then(doc => {
+   console.log("Documento inserido com sucesso", doc)
+}).catch(err => {
+   console.log(err)
+})
