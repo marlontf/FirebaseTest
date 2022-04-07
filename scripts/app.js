@@ -21,6 +21,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 const analytics = getAnalytics(initializeApp(firebaseConfig))
 
+const TURMA = "turmaA"
 let db = firebase.firestore()
 
 //Ler todos os dados de uma coleção
@@ -50,17 +51,31 @@ let db = firebase.firestore()
 //Comparações permitidas == , > , < , >= , <=
 //Tomar cuidado ao tentar comparar string com número, vai dar ruim
 
-const TURMA = "turmaA"
 
-db.collection(TURMA).add({
-   nome: "Marcos",
+
+//Inserção com geração automática de ID
+// db.collection(TURMA).add({
+//    nome: "Marcos",
+//    sobrenome: "Santos",
+//    notas: {
+//       nota1: 9.6,
+//       nota2: 7.5
+//    }
+// }).then(doc => {
+//    console.log("Documento inserido com sucesso", doc)
+// }).catch(err => {
+//    console.log(err)
+// })
+
+db.collection(TURMA).doc("AlunoNovo").set({
+   nome: "Mariana",
    sobrenome: "Santos",
    notas: {
-      nota1: 9.6,
+      nota1: 8.6,
       nota2: 7.5
    }
-}).then(doc => {
-   console.log("Documento inserido com sucesso", doc)
+}).then(() => {
+   console.log("Documento inserido com sucesso")
 }).catch(err => {
    console.log(err)
 })
