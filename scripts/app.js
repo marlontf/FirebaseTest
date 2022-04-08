@@ -70,14 +70,26 @@ let db = firebase.firestore()
 //Inserindo com ID personalizado
 //ATENÇÃO: Se já houver algo com esse ID, ele será sobrescrito
 //Ou seja, essa função também server para atualização
+// db.collection(TURMA).doc("AlunoNovo").set({
+//    nome: "Mariana",
+//    sobrenome: "Oliveira",
+//    notas: {
+//       nota1: 8.6,
+//       nota2: 7.5
+//    }
+// }).then(() => {
+//    console.log("Documento inserido com sucesso")
+// }).catch(err => {
+//    console.log(err)
+// })
+
+//Para atualizar apenas um dado da tabela, deve-se lembra de
+//sempre passar o parâmetro merge como true
 db.collection(TURMA).doc("AlunoNovo").set({
-   nome: "Mariana",
-   sobrenome: "Oliveira",
-   notas: {
-      nota1: 8.6,
-      nota2: 7.5
-   }
-}).then(() => {
+   sobrenome: "Catarina",
+},
+   { merge: true } //Parâmetro para não sobrescrever TUDO
+).then(() => {
    console.log("Documento inserido com sucesso")
 }).catch(err => {
    console.log(err)
