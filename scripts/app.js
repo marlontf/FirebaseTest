@@ -150,7 +150,7 @@ let db = firebase.firestore()
 //Inserindo dados em um array
 db.collection(TURMA).doc("AlunoNovo").update({
 
-   cidades: firebase.firestore.FieldValue.arrayUnion("Nanuque")
+   cidades: firebase.firestore.FieldValue.arrayUnion("Nanuque", "Vitória")
 
 }).then(() => {
    console.log("Documento inserido com sucesso")
