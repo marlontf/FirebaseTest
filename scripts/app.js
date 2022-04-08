@@ -109,9 +109,21 @@ let db = firebase.firestore()
 
 //atualizando a nota com o dotNotation
 //repare na utilização de aspas no campo
+// db.collection(TURMA).doc("AlunoNovo").update({
+
+//    "notas.nota1": 10.0
+
+// }).then(() => {
+//    console.log("Documento inserido com sucesso")
+// }).catch(err => {
+//    console.log(err)
+// })
+
+
+//inserindo novo campo com o update
 db.collection(TURMA).doc("AlunoNovo").update({
 
-   "notas.nota1": 10.0
+   faltas: 3
 
 }).then(() => {
    console.log("Documento inserido com sucesso")
