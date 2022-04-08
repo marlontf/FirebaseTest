@@ -85,11 +85,22 @@ let db = firebase.firestore()
 
 //Para atualizar apenas um dado da tabela, deve-se lembra de
 //sempre passar o parâmetro merge como true
-db.collection(TURMA).doc("AlunoNovo").set({
-   sobrenome: "Catarina",
-},
-   { merge: true } //Parâmetro para não sobrescrever TUDO
-).then(() => {
+// db.collection(TURMA).doc("AlunoNovo").set({
+//    sobrenome: "Catarina",
+// },
+//    { merge: true } //Parâmetro para não sobrescrever TUDO
+// ).then(() => {
+//    console.log("Documento inserido com sucesso")
+// }).catch(err => {
+//    console.log(err)
+// })
+
+//Maneira mais segura de fazer uma atualização no banco de dados
+db.collection(TURMA).doc("AlunoNovo").update({
+
+   sobrenome: "Arlequina"
+
+}).then(() => {
    console.log("Documento inserido com sucesso")
 }).catch(err => {
    console.log(err)
