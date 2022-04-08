@@ -96,9 +96,22 @@ let db = firebase.firestore()
 // })
 
 //Maneira mais segura de fazer uma atualização no banco de dados
+// db.collection(TURMA).doc("AlunoNovo").update({
+
+//    sobrenome: "Arlequina"
+
+// }).then(() => {
+//    console.log("Documento inserido com sucesso")
+// }).catch(err => {
+//    console.log(err)
+// })
+
+
+//atualizando a nota com o dotNotation
+//repare na utilização de aspas no campo
 db.collection(TURMA).doc("AlunoNovo").update({
 
-   sobrenome: "Arlequina"
+   "notas.nota1": 10.0
 
 }).then(() => {
    console.log("Documento inserido com sucesso")
