@@ -160,9 +160,22 @@ let db = firebase.firestore()
 
 
 //Removendo dados de um array
+// db.collection(TURMA).doc("AlunoNovo").update({
+
+//    cidades: firebase.firestore.FieldValue.arrayRemove("Vitória")
+
+// }).then(() => {
+//    console.log("Documento inserido com sucesso")
+// }).catch(err => {
+//    console.log(err)
+// })
+
+
+
+//Incrementando dados
 db.collection(TURMA).doc("AlunoNovo").update({
 
-   cidades: firebase.firestore.FieldValue.arrayRemove("Vitória")
+   faltas: firebase.firestore.FieldValue.increment(1)
 
 }).then(() => {
    console.log("Documento inserido com sucesso")
