@@ -121,9 +121,25 @@ let db = firebase.firestore()
 
 
 //inserindo novo campo com o update
+// db.collection(TURMA).doc("AlunoNovo").update({
+
+//    faltas: 3
+
+// }).then(() => {
+//    console.log("Documento inserido com sucesso")
+// }).catch(err => {
+//    console.log(err)
+// })
+
+
+//Criando um array
 db.collection(TURMA).doc("AlunoNovo").update({
 
-   faltas: 3
+   cidades: [
+      "Rio de Janeiro",
+      "São Paulo",
+      "Minas gerais"
+   ]
 
 }).then(() => {
    console.log("Documento inserido com sucesso")
